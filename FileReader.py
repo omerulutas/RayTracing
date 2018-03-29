@@ -14,22 +14,13 @@ from object.Transformation import Transformation
 class JsonReader:
 
     def __init__(self, fileName):
-        # Firstly we need to hand root directory
-        fn = getattr(sys.modules['__main__'], '__file__')
-        self.root_path = os.path.abspath(os.path.dirname(fn))
 
         self.data = json  #
+        # Firstly we need to hand root directory
         self.get_json_object(fileName)
 
-    # returns full file path
-    def get_file_path(self, file):
-        return self.root_path + '\\' + file
-
-    # get_json_object create json objects from .json file
-    # and than return objects
     def get_json_object(self, file):
-        file_path = self.get_file_path(file)
-        with open(file_path) as data_file:
+        with open(file) as data_file:
             json_data = json.load(data_file)
             self.data = json_data
 

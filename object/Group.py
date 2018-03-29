@@ -8,4 +8,5 @@ class Group(Object3D):
         self.objects = []
 
     def intersect(self, ray, hit, tmin):
-        pass
+        for object in self.objects:
+            object.intersect(self, ray, hit, tmin)

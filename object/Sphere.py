@@ -16,7 +16,6 @@ class Sphere(Object3D):
     # THis intersect function is used for controlling intersection with sphere and ray
     # if sphere and ray have intersection than returns true and set hit's color and t value
     def intersect(self, ray: Ray, hit: Hit, tmin):
-        print("sphere")
         # create a vector from origin to center
         originCenterVec = ray.origin - self.center
 
