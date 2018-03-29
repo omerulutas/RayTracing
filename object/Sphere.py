@@ -17,11 +17,16 @@ class Sphere(Object3D):
     # if sphere and ray have intersection than returns true and set hit's color and t value
     def intersect(self, ray: Ray, hit: Hit, tmin):
         # create a vector from origin to center
+        #L
         originCenterVec = ray.origin - self.center
 
         # define equation coefficients
         a = np.dot(ray.direction, ray.direction)
+
+        #tc
         b = 2 * np.dot(originCenterVec, ray.direction)
+
+
         c = np.dot(originCenterVec, originCenterVec) - self.radius * self.radius
 
         # calculate discriminant of the intersection test
@@ -52,6 +57,7 @@ class Sphere(Object3D):
                     t = t1
 
             if t < tmin:
+                hit.color = (0, 0, 0)
                 return False
 
             else:

@@ -10,18 +10,15 @@ from RayTracing import RayTracing
 
 class Driver:
 
-    def __init__(self, p_rayCasting : RayCasting, p_rayTracing : RayTracing):
+    def __init__(self, p_rayCasting: RayCasting, p_rayTracing: RayTracing):
         self.rayCasting = p_rayCasting
         self.rayTracing = p_rayTracing
 
     def rayCasting_actions(self, scene, near, far):
         self.rayCasting.get_ray_casing_scene(scene, near, far)
 
-
-
     def get_ray_tracing_scene(self):
         print("ray tracing")
-
 
     def file_selector(self):
         fn = getattr(sys.modules['__main__'], '__file__')
@@ -31,11 +28,8 @@ class Driver:
         return root_path
 
 
-
-
 # this function is main function of the system
 def main():
-
     casting = RayCasting()
     tracing = RayTracing()
     d = Driver(casting, tracing)
@@ -55,8 +49,6 @@ def main():
 
     elif selection == '2':
         d.get_ray_tracing_scene()
-
-
 
 
 main()

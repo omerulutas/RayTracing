@@ -16,9 +16,11 @@ class OrthographicCamera(Camera):
     # generate_ray function generate ray according to x and y values
     # and than returns created ray instance
     def generate_ray(self, x, y):
+
         a = np.array(self.direction)
         b = np.array(self.up)
         horizontal = np.cross(b, a)
+
         ray_origin = self.center + (x - 0.5) * self.size * horizontal + (y - 0.5) * self.size * self.up
         ray_direction = self.direction
         ray = Ray(ray_origin, ray_direction)
